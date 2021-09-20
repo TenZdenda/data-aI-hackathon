@@ -7,3 +7,6 @@ Branda has ability to collect data from various social media through hashtags, c
 ![image](https://user-images.githubusercontent.com/58290791/133950493-524b52cb-ac12-4939-b4fb-d61838e92a30.png)
 
 ### What you can find inside of this repository :grey_question:
+- Python script for getting the data from company Twitter
+- Web application
+                

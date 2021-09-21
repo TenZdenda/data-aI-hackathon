@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Connection;
+use App\Models\Invitation;
+use App\Models\Keyword;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,13 +22,21 @@ class OnboardingController extends Controller
 
     public function stepTwo()
     {
+        $teams = Team::all();
+        $invitations = Invitation::all();
+
         return view('onboarding.invite')
+            ->with('teams', $teams)
+            ->with('invitations', $invitations)
             ->with('step', 2);
     }
 
     public function stepThree()
     {
+        $keywords = Keyword::all();
+
         return view('onboarding.keywords')
+            ->with('keywords', $keywords)
             ->with('step', 3);
     }
 }

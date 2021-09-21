@@ -22,13 +22,18 @@ Route::get('/', function () {
 Auth::routes(['logout' => false]);
 Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function() {
+
     // Onboarding process
-    Route::get('/onboarding/social-media', [\App\Http\Controllers\OnboardingController::class, 'stepOne']);
-    Route::get('/onboarding/invite', [\App\Http\Controllers\OnboardingController::class, 'stepTwo']);
-    Route::get('/onboarding/keywords', [\App\Http\Controllers\OnboardingController::class, 'stepThree']);
+    Route::get('/onboarding/social-media', [\App\Http\Controllers\OnboardingController::class, 'stepOne'])->name('onboarding.social-media');
+    Route::get('/onboarding/invite', [\App\Http\Controllers\OnboardingController::class, 'stepTwo'])->name('onboarding.invite');
+    Route::get('/onboarding/keywords', [\App\Http\Controllers\OnboardingController::class, 'stepThree'])->name('onboarding.keywords');
+
+    Route::post('/team', [\App\Http\Controllers\TeamController::class, 'store'])->name('team.store');
+    Route::post('/invite', [\App\Http\Controllers\InvitationController::class, 'store'])->name('invite.store');
+    Route::post('/keyword', [\App\Http\Controllers\KeywordController::class, 'store'])->name('keyword.store');
 });
 
 

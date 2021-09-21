@@ -34,6 +34,6 @@ class ConnectionController extends Controller
         $pages = $facebook->get('/' . $facebookSocialite->id . '/accounts', $access_token);
         $jsonFormat = json_decode($pages->getBody());
 
-        return redirect()->route('/onboarding/social-media');
+        return redirect()->route('onboarding.social-media');
     }
 }

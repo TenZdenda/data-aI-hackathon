@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\keyword;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KeywordController extends Controller
 {
@@ -13,6 +14,7 @@ class KeywordController extends Controller
 
         foreach ($keywords as $keyword) {
             Keyword::create([
+                'user_id' => Auth::id(),
                 'keyword' => $keyword
             ]);
         }

@@ -22,7 +22,7 @@ Route::get('/', function () {
 Auth::routes(['logout' => false]);
 Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
-Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');
 
 Route::group(['middleware' => 'auth'], function() {
 

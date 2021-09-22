@@ -25,7 +25,7 @@
                 </div>
 
 
-                <a href="/admin/dashborad" class="px-10 max-w-xs w-full py-4 rounded block mx-auto mt-16 text-center">
+                <a href="{{ route('admin.dashboard') }}" class="px-10 max-w-xs w-full py-4 rounded block mx-auto mt-16 text-center">
                     Go to dashboard
                 </a>
             </section>

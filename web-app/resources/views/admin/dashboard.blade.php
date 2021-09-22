@@ -3,7 +3,7 @@
 @section('content')
     <div class="space-y-10 px-10">
         <header class="flex justify-between">
-            <h1 class="text-2xl font-bold">Dashboard</h1>
+            <h1 class="text-2xl font-bold">Hello {{ \Illuminate\Support\Facades\Auth::user()->full_name }}</span> <br> <span class="font-light">welcome to the Branda!</span></h1>
         </header>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">

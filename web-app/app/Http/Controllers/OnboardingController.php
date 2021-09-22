@@ -22,7 +22,7 @@ class OnboardingController extends Controller
 
     public function stepTwo()
     {
-        $teams = Team::all();
+        $teams = Team::where('user_id', Auth::id())->get();
         $invitations = Invitation::all();
 
         return view('onboarding.invite')
@@ -33,7 +33,7 @@ class OnboardingController extends Controller
 
     public function stepThree()
     {
-        $keywords = Keyword::all();
+        $keywords = Keyword::where('user_id', Auth::id())->get();
 
         return view('onboarding.keywords')
             ->with('keywords', $keywords)

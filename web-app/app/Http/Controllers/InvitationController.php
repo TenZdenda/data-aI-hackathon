@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Invitation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InvitationController extends Controller
 {
@@ -13,6 +14,7 @@ class InvitationController extends Controller
 
         foreach ($emails as $email) {
             Invitation::create([
+                'user_id' => Auth::id(),
                 'email' => $email
             ]);
         }
